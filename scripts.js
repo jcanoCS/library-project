@@ -17,7 +17,17 @@ Book.prototype.getInfo = function() {
 // Array to store Book instances
 const booksList = [];
 
-function addBookToLibrary(title, author, numPages, genre) {
-    newBook = new Book(title, author, numPages, genre);
-    booksList.push(newBook);
+// function addBookToLibrary(title, author, numPages, genre) {
+//     newBook = new Book(title, author, numPages, genre);
+//     booksList.push(newBook);
+// };
+function addBookToLibrary(book) {
+    booksList.push(book);
+};
+
+
+function displayAllBooks() {
+    booksList.forEach(function(book) {
+        console.log(book.getInfo());
+    });
 };
