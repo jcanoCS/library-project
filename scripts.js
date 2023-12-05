@@ -17,6 +17,11 @@ Book.prototype.getInfo = function() {
 // Array to store Book instances
 const booksList = [];
 
+
+
+// Function to add a book to library. The parameter is a book
+// object. Alternatively, in the comments is the code to add
+// a book by having the book's info in the parameters
 // function addBookToLibrary(title, author, numPages, genre) {
 //     newBook = new Book(title, author, numPages, genre);
 //     booksList.push(newBook);
@@ -26,6 +31,8 @@ function addBookToLibrary(book) {
 };
 
 
+// Function to display entire library
+// Will iterate through each book in the book array and display it's info
 function displayAllBooks() {
     booksList.forEach(function(book) {
         console.log(book.getInfo());
