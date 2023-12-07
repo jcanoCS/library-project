@@ -13,10 +13,13 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
+    min-height: 50vh;
+    max-height: 70vh;
 }
 
 .container > .card {
     background-color: bisque;
     height: 200px;
     width: 250px;
+    margin: 15px;
 }
