@@ -9,7 +9,41 @@
 <body>
 
     <div class="top"></div>
-    <div class="middle"></div>
+
+    <div class="middle">
+        <form id="book-form">
+            <div>
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+            </div>
+            <div>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" required>
+            </div>
+            <div>
+                <label for="numPages">Number of Pages:</label><br>
+                <input type="number" id="numPages" name="numPages" required><br>
+            </div>
+            <div>
+                <label for="genre">Genre:</label><br>
+                <select name="genre" id="genre" multiple required>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-fiction</option>
+                    <option value="novel">Novel</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="science-fiction">Sci-Fi</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div id="read-check">
+                <label for="isRead">I Finished Reading this Book</label><br>
+                <input type="checkbox" id="isRead" name="isRead"><br>
+            </div>
+        </form>
+        <button type="submit" form="book-form" value="Submit">Add book</button>
+    </div>
+
     <div class="container" id="book-library">
     </div>
 </body>
