@@ -30,11 +30,20 @@ function addBookToLibrary(book) {
     booksList.push(book);
 };
 
+function addBookCardToPage(book) {
+    // Reference to place in page where book cards will be displayed
+    const pageBookCardContainer = document.getElementById('book-library');
+    const new_card = document.createElement('div');
+    new_card.classList.add('card');
+    new_card.textContent = book.getInfo();
+    pageBookCardContainer.appendChild(new_card);
+};
+
 
 // Function to display entire library
 // Will iterate through each book in the book array and display it's info
 function displayAllBooks() {
     booksList.forEach(function(book) {
-        console.log(book.getInfo());
+        addBookCardToPage(book);
     });
 };

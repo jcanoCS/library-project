@@ -10,6 +10,12 @@ body {
     max-height: 20vh;
 }
 
+.middle {
+    background-color: lightsalmon;
+    min-height: 35vh;
+    max-height: 45vh;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -19,4 +25,5 @@ body {
     background-color: bisque;
     height: 200px;
     width: 250px;
+    margin: 20px;
 }
