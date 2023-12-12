@@ -107,7 +107,7 @@ bookForm.addEventListener("submit", function (e) {
     let author = formData.get('author');
     let numPages = formData.get('numPages');
     let genre = formData.get('genre');
-    let bookWasRead = formData.get('isRead') == 'on';
+    let bookWasRead = document.getElementById('isRead').checked;
     const newBook = new Book(title, author, numPages, genre, bookWasRead);
     let newCard = addBookCardToPage(newBook);
     addBookToLibrary(newBook, newCard);
