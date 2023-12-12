@@ -36,6 +36,8 @@ function addBookCardToPage(book) {
     const new_card = document.createElement('div');
     new_card.classList.add('card');
     new_card.textContent = book.getInfo();
+    book.isRead ? new_card.classList.add('bookIsReadDisplay') : new_card.classList.add('bookIsNotReadDisplay');
+
 
     const buttonsContainer = document.createElement('div');
     const removeButton = document.createElement('button');

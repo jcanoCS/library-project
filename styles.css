@@ -48,3 +48,11 @@ body {
 .remove {
     background-color: firebrick;
 }
+
+.bookIsReadDisplay {
+    box-shadow: 1px 1px 10px 3px yellow;
+}
+
+.bookIsNotReadDisplay {
+    box-shadow: 1px 1px 10px 3px green;
+}
