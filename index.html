@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Library</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./scripts.js"></script>
+    <script defer src="./scripts.js"></script>
 </head>
 <body>
 
     <div class="top"></div>
 
     <div class="middle">
-        <form id="book-form">
+        <form id="book-form" >
             <div>
                 <label for="title">Title:</label><br>
                 <input type="text" id="title" name="title" required><br>
@@ -41,7 +41,7 @@
                 <input type="checkbox" id="isRead" name="isRead"><br>
             </div>
         </form>
-        <button type="submit" form="book-form" value="Submit">Add book</button>
+        <button type="submit" form="book-form" value="Submit" id="submit-btn">Add book</button>
     </div>
 
     <div class="container" id="book-library">

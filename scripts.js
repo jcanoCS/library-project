@@ -47,3 +47,22 @@ function displayAllBooks() {
         addBookCardToPage(book);
     });
 };
+
+// Adding event listener to submit button to add new book with information
+function submitBook() {
+    let bookData = new FormData(bookForm, submitBtn);
+
+    for (const [key, value] of bookData) {
+        console.log(`${key}:   ${value}\n`);
+    }
+}
+
+
+// Adding reference to the book form when submitting book information
+const bookForm = document.getElementById('book-form');
+
+bookForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let formData = new FormData(bookForm);
+    console.log(Object.fromEntries(formData));
+});
