@@ -36,6 +36,20 @@ function addBookCardToPage(book) {
     const new_card = document.createElement('div');
     new_card.classList.add('card');
     new_card.textContent = book.getInfo();
+
+    const buttonsContainer = document.createElement('div');
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove');
+    removeButton.textContent = 'Remove';
+    const readButton = document.createElement('button');
+    readButton.classList.add('readStatus');
+    readButton.textContent = 'Change Read Status';
+    
+    buttonsContainer.appendChild(readButton);
+    buttonsContainer.appendChild(removeButton);
+    new_card.appendChild(buttonsContainer);
+    
+    
     pageBookCardContainer.appendChild(new_card);
 };
 

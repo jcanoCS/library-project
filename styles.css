@@ -26,10 +26,23 @@ body {
     height: 200px;
     width: 250px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #read-check {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.readStatus {
+    background-color: dodgerblue;
+}
+
+.remove {
+    background-color: firebrick;
 }
