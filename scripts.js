@@ -48,6 +48,10 @@ function displayAllBooks() {
     });
 };
 
+function clearFormInput() {
+    let inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => (input.value = ''));
+}
 
 
 // Adding reference to the book form when submitting book information
@@ -64,4 +68,5 @@ bookForm.addEventListener("submit", function (e) {
     const newBook = new Book(title, author, numPages, genre, bookWasRead);
     addBookToLibrary(newBook);
     addBookCardToPage(newBook);
+    clearFormInput();
 });
