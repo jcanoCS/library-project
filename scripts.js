@@ -16,6 +16,7 @@ Book.prototype.getInfo = function() {
 
 // Array to store Book instances
 const booksList = [];
+const bookObjectsMap = new Map();
 
 
 
@@ -26,8 +27,9 @@ const booksList = [];
 //     newBook = new Book(title, author, numPages, genre);
 //     booksList.push(newBook);
 // };
-function addBookToLibrary(book) {
+function addBookToLibrary(book, card) {
     booksList.push(book);
+    bookObjectsMap.set(card, book);
 };
 
 function addBookCardToPage(book) {
@@ -47,13 +49,14 @@ function addBookCardToPage(book) {
     const readButton = document.createElement('button');
     readButton.classList.add('readStatus');
     readButton.textContent = 'Change Read Status';
-    
+    enableCardButtons(new_card, readButton, removeButton);
     buttonsContainer.appendChild(readButton);
     buttonsContainer.appendChild(removeButton);
     new_card.appendChild(buttonsContainer);
     
     
     pageBookCardContainer.appendChild(new_card);
+    return new_card;
 };
 
 
@@ -70,6 +73,25 @@ function clearFormInput() {
     inputs.forEach((input) => (input.value = ''));
 }
 
+function enableCardButtons(bookCard, readButton, removeButton) {
+    readButton.onclick = function(){changeReadStatus(bookCard);};
+    removeButton.onclick = function(){removeCard(bookCard);};
+}
+
+function removeCard(bookCard) {
+    bookCard.remove();
+}
+
+function changeReadStatus(bookCard) {
+    if (bookCard.isRead) {
+        bookCard.classList.remove('bookIsReadDisplay');
+        bookCard.classList.add('bookIsNotReadDisplay');
+        return;
+    }
+    bookCard.classList.remove('bookIsNotReadDisplay');
+    bookCard.classList.add('bookIsReadDisplay');
+}
+
 
 // Adding reference to the book form when submitting book information
 const bookForm = document.getElementById('book-form');
@@ -83,7 +105,8 @@ bookForm.addEventListener("submit", function (e) {
     let genre = formData.get('genre');
     let bookWasRead = formData.get('isRead') == 'on';
     const newBook = new Book(title, author, numPages, genre, bookWasRead);
-    addBookToLibrary(newBook);
-    addBookCardToPage(newBook);
+    let newCard = addBookCardToPage(newBook);
+    addBookToLibrary(newBook, newCard);
     clearFormInput();
 });
+
