@@ -50,9 +50,9 @@ body {
 }
 
 .bookIsReadDisplay {
-    box-shadow: 1px 1px 10px 3px yellow;
+    box-shadow: 1px 1px 10px 3px green;
 }
 
-.bookIsNotReadDisplay {
-    box-shadow: 1px 1px 10px 3px green;
+.bookIsNotReadDisplay { 
+    box-shadow: 1px 1px 10px 3px yellow;
 }
