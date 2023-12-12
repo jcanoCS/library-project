@@ -94,6 +94,8 @@ function changeReadStatus(bookCard) {
         bookCard.classList.add('bookIsReadDisplay');
     }
     book.isRead = !book.isRead;
+    bookCard.getElement = book.getInfo();
+    console.log(bookCard);
 }
 
 
