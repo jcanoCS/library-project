@@ -80,16 +80,20 @@ function enableCardButtons(bookCard, readButton, removeButton) {
 
 function removeCard(bookCard) {
     bookCard.remove();
+    bookObjectsMap.delete(bookCard);
 }
 
 function changeReadStatus(bookCard) {
-    if (bookCard.isRead) {
+    let book = bookObjectsMap.get(bookCard);
+    if (book.isRead) {
         bookCard.classList.remove('bookIsReadDisplay');
         bookCard.classList.add('bookIsNotReadDisplay');
-        return;
     }
-    bookCard.classList.remove('bookIsNotReadDisplay');
-    bookCard.classList.add('bookIsReadDisplay');
+    else {
+        bookCard.classList.remove('bookIsNotReadDisplay');
+        bookCard.classList.add('bookIsReadDisplay');
+    }
+    book.isRead = !book.isRead;
 }
 
 
