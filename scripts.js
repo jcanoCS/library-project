@@ -40,6 +40,7 @@ function addBookCardToPage(book) {
 
 
     const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons-container');
     const removeButton = document.createElement('button');
     removeButton.classList.add('remove');
     removeButton.textContent = 'Remove';
