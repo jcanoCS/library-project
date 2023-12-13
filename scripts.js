@@ -37,7 +37,10 @@ function addBookCardToPage(book) {
     const pageBookCardContainer = document.getElementById('book-library');
     const new_card = document.createElement('div');
     new_card.classList.add('card');
-    new_card.textContent = book.getInfo();
+    const card_text = document.createElement('div');
+    card_text.setAttribute('id', 'card-text');
+    card_text.textContent = book.getInfo();
+    new_card.appendChild(card_text);
     book.isRead ? new_card.classList.add('bookIsReadDisplay') : new_card.classList.add('bookIsNotReadDisplay');
 
 
@@ -94,8 +97,7 @@ function changeReadStatus(bookCard) {
         bookCard.classList.add('bookIsReadDisplay');
     }
     book.isRead = !book.isRead;
-    bookCard.getElement = book.getInfo();
-    console.log(bookCard);
+    bookCard.childNodes[0].textContent = book.getInfo();
 }
 
 
